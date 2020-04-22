@@ -19,6 +19,18 @@ body {
   font-family: Impact, sans-serif;
 }
 
-h1, h3, h4 {
+h1, h4 {
   color: #1cadb8;
+}
+
+figcaption.figure-caption, h3 {
+  color: white;
+}
+
+img.img-thumbnail {
+  width: 75%;
+}
+
+img.float-left {
+  width: 50%
 }
