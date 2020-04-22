@@ -20,12 +20,11 @@ def covid19_healthdata_scrape(state):
     'state': state,
     'state_data': {
         'Mass Gathering Restriction': divs_text_split[1],
-        'Initual Business Closure': divs_text_split[3],
+        'Initial Business Closure': divs_text_split[3],
         'Educational Facilities Closure': divs_text_split[5],
         'Non-Essential Services Closure': divs_text_split[7],
         'Stay at Home Order': divs_text_split[9],
-        'Travel severely limited': divs_text_split[11]
+        'Travel Severely Limited': divs_text_split[11]
         }
     }
     covid19_healthdate_bystate.append(scraped_data)
-    
