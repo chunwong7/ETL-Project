@@ -21,30 +21,35 @@
             Menu
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Project Proposal</a>
-            <a class="dropdown-item" href="#">ERD</a>
+            <a class="dropdown-item" href="ProjectProposal.html">Project Proposal</a>
+            <a class="dropdown-item" href="ERD.html">ERD</a>
             <a class="dropdown-item" href="#">Some item here</a>
-            <a class="dropdown-item" href="#">About</a>
+            <a class="dropdown-item" href="About.html">About</a>
           </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Code</a>
+            <a class="nav-link" href="Code.html">Code</a>
         </li>   
         <li class="nav-item">
-            <a class="nav-link" href="#">Data Sources</a>
+            <a class="nav-link" href="Sources.html">Data Sources</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="About.html">About</a>
         </li> 
         <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
-    <div class="jumbotron"><h1 class="mb-0">Project Proposal: COVID-19 Data</h1>
+    <div class="jumbotron">
+        <div class="row">
+            <a class="btn btn-info ml-md-auto" href="#" role="button">Download PDF</a>
+        </div>
+        <h1 class="mb-0">Project Proposal: COVID-19 Data</h1>
+
         <p>Chris Bock, Val Lobas, Goutham Polavaram, Frankie Wong</p>
         <br>
         <h6>Project Topic</h6>
@@ -52,7 +57,7 @@
               <p>Analysts will be able to evaluate current hospital resource usage by state and plan resource utilization. They will also be able to evaluate the effectiveness of policy dates related to restricting contact between people at work, school, and in public places.</p>
         
         
-        <table class = menu border="1" >
+        <table class="menu mb-4" border="1">
             <thead>
               <tr>
                 <th class="text-center" colspan="6">Potential Data Sources</th>
@@ -99,15 +104,22 @@
             <p>Goutham – scrape worldometers and look for additional APIs</p>
             <p>Val – ERD diagram and pull in the Kaggle csv</p>
 
-          <br>
-
+          
+            
           <div class="row">
-            <a class="btn btn-info" href="#" role="button">Download PDF</a>
+            <a class="btn btn-info" href="https://trello.com/b/vs0c0SqR/etl-project-group-4" role="button">Trello Board</a>
           </div>
 
     </div>  
 </div>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
   
 
 
