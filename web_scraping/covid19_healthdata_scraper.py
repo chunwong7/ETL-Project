@@ -21,20 +21,21 @@ def covid19_healthdata_scrape(state):
     driver.close()
     dates_data = {
     'state': state,
-    'Mass Gathering Restriction': dates_text_split[1],
-    'Initual Business Closure': dates_text_split[3],
-    'Educational Facilities Closure': dates_text_split[5],
-    'Non-Essential Services Closure': dates_text_split[7],
-    'Stay at Home Order': dates_text_split[9],
-    'Travel severely limited': dates_text_split[11]}
+    'mass_gathering_restriction': dates_text_split[1],
+    'initual_business_closure': dates_text_split[3],
+    'educational_facilities_closure': dates_text_split[5],
+    'non-Essential_services_closure': dates_text_split[7],
+    'stay_at_home_order': dates_text_split[9],
+    'travel_severely_limited': dates_text_split[11]}
     resources_data = {
-    'Hospital Beds Needed': int(resources_div_split[1].replace('beds','').replace(',','')),
-    'Hospital Beds Available': int(resources_div_split[3].replace('beds','').replace(',','')),
-    'Hospital Beds Shortage': int(resources_div_split[5].replace('beds','').replace(',','')),
-    'ICU Beds Needed': int(resources_div_split[7].replace('beds','').replace(',','')),
-    'ICU Beds Available': int(resources_div_split[9].replace('beds','').replace(',','')),
-    'ICU Beds Shortage': int(resources_div_split[11].replace('beds','').replace(',','')),
-    'Ventilators Needed': int(resources_div_split[13].replace('ventilators','').replace(',',''))
+    'state': state,
+    'hospital_beds_needed': int(resources_div_split[1].replace('beds','').replace(',','')),
+    'hospital_beds_available': int(resources_div_split[3].replace('beds','').replace(',','')),
+    'hospital_beds_shortage': int(resources_div_split[5].replace('beds','').replace(',','')),
+    'icu_beds_needed': int(resources_div_split[7].replace('beds','').replace(',','')),
+    'icu_beds_available': int(resources_div_split[9].replace('beds','').replace(',','')),
+    'icu_beds_shortage': int(resources_div_split[11].replace('beds','').replace(',','')),
+    'ventilators_needed': int(resources_div_split[13].replace('ventilators','').replace(',',''))
     }
     covid19_healthdate_dates_bystate.append(dates_data)
     covid19_healthdate_resources_bystate.append(resources_data)
