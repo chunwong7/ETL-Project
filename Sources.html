@@ -56,7 +56,7 @@
                         <p>•	Removing columns that provided duplicate country-based information (UID, iso2, iso3, and code3)</p>
                         <p>•	Renaming columns for clarity (Admin 2 to County, Province_State to State, Long_ to Lng)</p>
                         <p>•	Changing the date values from strings to datetime objects so comparisons and filtering can be done on the final data table</p>
-                        <a class="btn btn-info" href="#" role="button">IHME_Dates Code Link</a>
+                        <a class="btn btn-info" href="#" role="button">Download covid19_policydates.csv</a>
                     </div>
               </div>
 
@@ -72,7 +72,7 @@
                       <p>•	Removing columns that provided duplicate country-based information (UID, iso2, iso3, and code3)</p>
                       <p>•	Renaming columns for clarity (Admin 2 to County, Province_State to State, Long_ to Lng)</p>
                       <p>•	Changing the date values from strings to datetime objects so comparisons and filtering can be done on the final data table</p>
-                      <a class="btn btn-info" href="#" role="button">IHME_Hospitals Code Link</a>
+                      <a class="btn btn-info" href="#" role="button">Download hospital_resources.csv</a>
                   </div>
               </div>
 
@@ -92,7 +92,7 @@
                       <p>•	Dropped rows with missing values and reset the index to be used as a primary key</p>
                       <p>•	Changing the date values from strings to datetime objects so comparisons and filtering can be done on the final data table</p>
                       <p>•	Cleaned data were exported as a CSV file and loaded into the <strong>Counties Table</strong>.</p>
-                      <a class="btn btn-info" href="#" role="button">Kaggle_Counties Code Link</a>
+                      <a class="btn btn-info" href="#" role="button">Download county_data.csv</a>
                   </div> 
               </div>
 
@@ -123,12 +123,18 @@
                     <h6>Forecast Table</h6>
                       <p>Forecast data for the range of potential deaths from COVID-19 is available from the CDC at https://www.cdc.gov/coronavirus/2019-ncov/covid-data/forecasting-us.html. 
                         This data is provided by state and shows predictions from different models for 1 to 4 weeks in the future.</p>
+                      <p>Forecasts fall into one of three categories:
+                        <p>•	The LANL model does not explicitly model the effects of individual social distancing measures but assumes 
+                          that implemented interventions will continue to be upheld in the future resulting in decreased growth.</p>
+                        <p>•	The IHME and MOBS_NEU models are conditional on existing social distancing measures continuing through 
+                          the projected time−period.</p>
+                        <p>•	The CU models make different assumptions about the effectiveness of current social distancing interventions.</p>  
                       <p>The forecast data was downloaded as a csv. The purpose of this dataset was for forecast data by state, date, and type of model. Data clean-up included:</p>
                         <p>•	Removing rows that aggregated data for the US as a whole</p>
                         <p>•	Removing rows with missing information</p>
                         <p>•	Renaming columns for clarity (target week end date to target end date, location name to state, point to actual)</p>
                         <p>•	Changing the date values from strings to datetime objects so comparisons and filtering can be done on the final data table</p>
-                        <a class="btn btn-info" href="#" role="button">CDC_Forecast Code Link</a>
+                        <a class="btn btn-info" href="#" role="button">Download forecast_CDC.csv</a>
                   </div>
                 </div>
 
