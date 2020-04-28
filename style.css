@@ -38,3 +38,34 @@ img.float-left {
 img.about {
   width: 20%
 }
+
+img.source {
+  width: 10%
+}
+
+img.source2 {
+  width: 7%
+}
+
+img.source3 {
+  width: 15%
+}
+
+img.source4 {
+  width: 5%
+}
+
+.bg-primary {
+  background-color: #1cadb8!important;
+  color: #fff!important;
+}
+
+.card-link {
+  color: #fff!important; 
+}
+
+img.ERD {
+  width: 100%
+}
+
+/*background-color: #007c91*/
