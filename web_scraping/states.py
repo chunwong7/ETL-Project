@@ -7,6 +7,7 @@ us_states_list = [
     'Colorado',
     'Connecticut',
     'Delaware',
+    'District of Columbia',
     'Florida',
     'Georgia',
     'Hawaii',
