@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ETL Project Group 4</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" target="_blank" href="https://github.com/chunwong7/ETL-Project">ETL Project: COVID-19</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-md-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <b>Menu</b>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="ProjectProposal.html">Project Proposal</a>
+            <a class="dropdown-item" href="ERD.html">ERD</a>
+            <a class="dropdown-item" href="Sources.html">Data Sources & Code</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="About.html"><b>Team Bios</b></a>
+        </li> 
+        <li class="nav-item active">
+            <a class="nav-link" href="../../index.html"><b>Home</b><span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <a class="btn btn-info ml-md-auto" target="_blank" href="../../Project_Info//ETL Project Proposal.pdf" role="button">Download PDF</a>
+        </div>
+        <h1 class="mb-0">Project Proposal: COVID-19 Data</h1>
+
+        <p>Chris Bock, Val Lobas, Goutham Polavaram, Frankie Wong</p>
+        <br>
+        <h6>Project Topic</h6>
+              <p>Coronavirus has spread across the globe in recent months. This virus has upended how people work, learn, and interact. Our group plans to obtain data related to COVID-19 for the US by state and date.  We will obtain and clean our datasets and place them in a database so analysis can be performed to identify new trends.</p>
+              <p>Analysts will be able to evaluate current hospital resource usage by state and plan resource utilization. They will also be able to evaluate the effectiveness of policy dates related to restricting contact between people at work, school, and in public places.</p>
+        
+        
+        <table style=background-color:gainsboro border="1" >
+            <thead>
+              <tr>
+                <th class="text-center" colspan="6">Potential Data Sources</th>
+              </tr>
+              <tr>
+                <th>Source</th>
+                <th>Format</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> Covid19.healthdata.org </td>
+                <td> Web Scrape </td>
+                <td> State, mass gathering restriction date, initial business closure date, educational facility closure date, nonessential business closure date, stay-at-home order date, travel severely limited date, hospital resource usage </td>
+              </tr>
+              <tr>
+                <td>Kaggle.com</td>
+                <td>csv</td>
+                <td>Total confirmed cases and total deaths by state and county</td>
+              </tr>
+              <tr>
+                <td>Ourworldindata.org</td>
+                <td>Web Scrape</td>
+                <td>Total tests per day by country</td>
+              </tr>
+              <tr>
+                <td>Worldometers.info</td>
+                <td>Web Scrape</td>
+                <td>Total cases, new cases(per day), total deaths, new deaths, active cases, total cases/1M pop, deaths/1M pop, total tests, tests/1M pop</td>
+              </tr>
+            </tbody>
+          </table>
+      <br>
+      
+          <h6>Do we have a high-level idea of how to accomplish our tasks?</h6>
+            <p>Yes</p>
+
+          <br>  
+
+          <h6>How the team plans to split up the project work to start:</h6>
+            <p>Frankie – web scraping of covid19, set up Github repo</p>
+            <p>Chris – web scraping of ourworldindata, start Github pages</p>
+            <p>Goutham – scrape worldometers and look for additional APIs</p>
+            <p>Val – ERD diagram and pull in the Kaggle csv</p>
+        
+          <br>
+                
+          <h6>Click here to go to our updated Trello board:</h6>   
+            <a class="btn btn-info" target="_blank" href="https://trello.com/b/vs0c0SqR/etl-project-group-4" role="button">Trello Board</a>
+          
+
+    </div>  
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+  
+
+
+
+
+
+

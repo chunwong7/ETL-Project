@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ETL Project Group 4</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" target="_blank" href="https://github.com/chunwong7/ETL-Project">ETL Project: COVID-19</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-md-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <b>Menu</b>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="ProjectProposal.html">Project Proposal</a>
+            <a class="dropdown-item" href="ERD.html">ERD</a>
+            <a class="dropdown-item" href="Sources.html">Data Sources & Code</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="About.html"><b>Team Bios</b></a>
+        </li> 
+        <li class="nav-item active">
+            <a class="nav-link" href="../../index.html"><b>Home</b><span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="jumbotron">
+        <h1 class="mb-0">Data Sources & Code</h1>
+              <p>Each data source and the method in which the data was obtained is decribed below for each respective website.
+                Download the resultant CSV file from each data extraction using the links below the description.</p>
+              <p>Analysts can download our <a target="_blank" href="../../SQL_Data/COVID19_schema.sql">SQL schema</a> to begin further evaluation of the fully transformed and extracted data set.</p>
+              <p>All code was commented and compiled into a single jupyter notebook and can be accessed here:</p>
+              <a class="btn btn-info" target="_blank" href="https://github.com/chunwong7/ETL-Project/blob/master/ETL_Data_Cleanup.ipynb" role="button">Compiled Jupyter Notebook</a>
+
+              <hr>
+              <br>
+
+              <div class="card mb-3">
+                  <div class="card-header h4 bg-primary">
+                    <a target="_blank" href="https://covid19.healthdata.org/united-states-of-america" class="card-link">https://covid19.healthdata.org/united-states-of-america</a>
+                    <img src="../assets/images/IHME.png" class="source float-left mr-4" alt="IHME"/>
+                  </div>
+                    <div class="card-body bg-white">
+                      <h6>Dates & Hospital Tables</h6>
+                      <p>Data for the policy enforcement dates (mass gathering restrictions, initial business closure, 
+                        education facilities closure, nonessential services closure, stay at home order, travel severely limited) 
+                        and hospital resources (beds needed, available, and shortage; icu beds needed, available, and shortage; 
+                        and ventilators needed) were scraped from the IHME COVID-19 website for the dates and hospital tables, respectively. 
+                        Data for each state can be accessed by adding a backslash and the name of the state (or District of Columbia) 
+                        at the end of the URL, using only lowercase letters and using a dash instead of spaces 
+                        (ex: https://covid19.healthdata.org/united-states-of-america/new-york). The information for when policy dates 
+                        were instituted and hospital resources are in separate parts of each individual state page but in the same location 
+                        on the page across all states, so the code for scraping remains the same for each state. The data did not need to be 
+                        cleaned as we only pulled the information we wanted to have in the database from this site. However, the following 
+                        information was updated:</p>
+                        <ul>
+                          <li>	The dates were in string and are converted to date-time objects </li>
+                          <li>	The hospital resource numbers were also in strings. The numeric part of the string was pulled and converted to integer </li>
+                        </ul>
+                        <a class="btn btn-info" href="../../Clean_CSVs/covid19_policydates.csv" role="button">Download covid19_policydates.csv</a>
+                        <a class="btn btn-info" href="../../Clean_CSVs/hospital_resources.csv" role="button">Download hospital_resources.csv</a>
+                    </div>
+              </div>
+
+              <div class="card mb-3">
+                <div class="card-header h4 bg-primary">
+                  <a target="_blank" href="https://www.kaggle.com/imdevskp/corona-virus-report" class="card-link">https://www.kaggle.com/imdevskp/corona-virus-report</a>
+                  <img src="../assets/images/Kaggle.png" class="source2 float-left mr-4" alt="Kaggle"/>
+                </div>
+                  <div class="card-body bg-white">
+                    <h6>Counties Table</h6>
+                    <p>A CSV file with the count of confirmed cases and deaths reported in the US by county and state was downloaded from Kaggle (Navigate to 'Data' section and download usa_county_wise.csv). 
+                      This website compiled their data using the Github repository from the Johns Hopkins University Center for Systems Science and Engineering.</p>
+                    <p>The purpose of this data is to have a view of the magnitude of COVID-19 cases and deaths at a county level. For this reason, data clean-up included:</p>
+                    <ul>
+                      <li>	Removing rows for US territories and only keeping data pertaining to states</li>
+                      <li>	Removing columns that provided duplicate country-based information (UID, iso2, iso3, and code3)</li>
+                      <li>	Renaming columns for clarity (Admin 2 to County, Province_State to State, Long_ to Lng)</li>
+                      <li>  Dropped rows with missing values and reset the index to be used as a primary key</li>
+                      <li>	Changing the date values from strings to datetime objects so comparisons and filtering can be done on the final data table</li>
+                    </ul>
+                      <a class="btn btn-info" href="../../Clean_CSVs/county_data.csv" role="button">Download county_data.csv</a>
+                  </div> 
+              </div>
+
+            <div class="card mb-3">
+                <div class="card-header h4 bg-primary">
+                  <a target="_blank" href="https://www.worldometers.info" class="card-link">https://www.worldometers.info</a>
+                  <img src="../assets/images/Worldometer.png" class="source3 float-left mr-4" alt="worldometers"/>
+                </div>
+                  <div class="card-body bg-white">
+                    <h6>States Table</h6>
+                    <p>Data scraped from this page was to provide information for the "States" file in our schema, 
+                      which include the columns of Total Cases, new cases, total deaths, new deaths, active cases, total cases/million, 
+                      deaths/million, total tests, and tests/million. This information is provided for each of the 50 US states plus the 
+                      District of Columbia. This information is provided and updated on a minute basis. No data needed to be cleaned as it was 
+                      already in a presentable format when scraped. However, the following information was omitted because it was outside 
+                      the scope of our focus:</p>
+                      <ul>
+                      	<li>  Information regarding cruise ships</li>
+                        <li>  Information regarding US territories</li>
+                      </ul>
+                      <a class="btn btn-info" href="../../Clean_CSVs/states - April30,2020,2218GMT.csv" role="button">Download states.csv</a>
+                  </div>
+              </div>
+
+              <div class="card mb-3">
+                <div class="card-header h4 bg-primary">
+                  <a target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/covid-data" class="card-link">https://www.cdc.gov/coronavirus/2019-ncov/covid-data</a>
+                  <img src="../assets/images/CDC.png" class="source4 float-left mr-4" alt="CDC"/>
+                </div>
+                  <div class="card-body bg-white">
+                    <h6>Forecast Table</h6>
+                      <p>Forecast data for the range of potential deaths from COVID-19 is available from the CDC at https://www.cdc.gov/coronavirus/2019-ncov/covid-data/forecasting-us.html. 
+                        This data is provided by state and shows predictions from different models for 1 to 4 weeks in the future.</p>
+                      <p>Forecasts fall into one of three categories:
+                        <ul>
+                        	<li>The LANL model does not explicitly model the effects of individual social distancing measures but assumes 
+                          that implemented interventions will continue to be upheld in the future resulting in decreased growth.</li>
+                          <li>	The IHME, MOBS_NEU, UT Austin and YYG models are conditional on existing social distancing measures continuing through 
+                          the projected time−period.</li>
+                          <li>	The CU models make different assumptions about the effectiveness of current social distancing interventions.</li>
+                        </ul>
+                      <p>The forecast data was downloaded as a CSV file. The purpose of this dataset was for forecast data by state, date, and type of model. Data clean-up included:</p>
+                        <ul>
+                          <li>	Removing rows that aggregated data for the US as a whole</li>
+                          <li>	Removing rows with missing information</li>
+                          <li>	Renaming columns for clarity (target week end date to target end date, location name to state, point to actual)</li>
+                          <li>	Changing the date values from strings to datetime objects so comparisons and filtering can be done on the final data table</li>
+                        </ul>
+                        <a class="btn btn-info" href="../../Clean_CSVs/forecast_cdc.csv" role="button">Download forecast_cdc.csv</a>
+                  </div>
+                </div>
+
+    </div>  
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+  
+
+
+
+
+
+
