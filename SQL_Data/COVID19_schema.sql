@@ -66,13 +66,13 @@ CREATE TABLE "states" (
 
 CREATE TABLE "hospitals" (
     "state" VARCHAR   NOT NULL,
-    "hospital_beds_needed" int   NOT NULL,
-    "hospital_beds_available" int   NOT NULL,
-    "hospital_beds_shortage" int   NOT NULL,
-    "icu_beds_needed" int   NOT NULL,
-    "icu_beds_available" int   NOT NULL,
-    "icu_beds_shortage" int   NOT NULL,
-    "ventilators_needed" int   NOT NULL,
+    "hospital_beds_needed" int   ,
+    "hospital_beds_available" int   ,
+    "hospital_beds_shortage" int   ,
+    "icu_beds_needed" int   ,
+    "icu_beds_available" int   ,
+    "icu_beds_shortage" int   ,
+    "ventilators_needed" int   ,
     CONSTRAINT "pk_hospitals" PRIMARY KEY (
         "state"
      )

@@ -1,4 +1,4 @@
-state,mass_gathering_restriction,initual_business_closure,educational_facilities_closure,non-Essential_services_closure,stay_at_home_order,travel_severely_limited
+state,mass_gathering_restriction,initual_business_closure,educational_facilities_closure,non-essential_services_closure,stay_at_home_order,travel_severely_limited
 Alabama,2020-03-19,2020-03-19,2020-03-19,2020-03-28,2020-04-04,
 Alaska,2020-03-24,2020-03-17,2020-03-16,2020-03-28,2020-03-28,
 Arizona,2020-03-30,,2020-03-16,,2020-03-30,
@@ -22,7 +22,7 @@ Maine,2020-03-18,2020-03-18,2020-03-16,2020-03-25,2020-04-02,
 Maryland,2020-03-16,2020-03-16,2020-03-16,2020-03-23,2020-03-30,
 Massachusetts,2020-03-13,2020-03-17,2020-03-17,2020-03-24,,
 Michigan,2020-03-13,2020-03-16,2020-03-16,2020-03-23,2020-03-24,
-Minnesota,2020-03-24,2020-03-17,2020-03-18,,2020-03-27,
+Minnesota,2020-03-28,2020-03-17,2020-03-18,,2020-03-28,
 Mississippi,2020-03-24,2020-03-24,2020-03-19,2020-04-03,2020-04-03,
 Missouri,2020-03-23,2020-03-23,2020-03-23,,2020-04-06,
 Montana,2020-03-24,2020-03-20,2020-03-15,2020-03-26,2020-03-26,
